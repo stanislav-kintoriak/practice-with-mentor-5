@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/practisForth/static/css/main.7acaea2f.css",
+    "main.js": "/practisForth/static/js/main.48400d94.js",
+    "index.html": "/practisForth/index.html",
+    "main.7acaea2f.css.map": "/practisForth/static/css/main.7acaea2f.css.map",
+    "main.48400d94.js.map": "/practisForth/static/js/main.48400d94.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7acaea2f.css",
+    "static/js/main.48400d94.js"
+  ]
+}
