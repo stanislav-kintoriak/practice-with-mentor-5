@@ -6,7 +6,6 @@ import { selectCurrentUser } from '../redux/users/selectors';
 
 export const UserDetailPage = () => {
   const currentUser = useSelector(selectCurrentUser);
-  console.log(currentUser);
   const dispatch = useDispatch();
 
   const { id } = useParams();
