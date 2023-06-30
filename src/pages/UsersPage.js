@@ -12,7 +12,7 @@ export const UsersPages = () => {
     dispatch(fetchAll());
   }, [dispatch]);
 
-  return (
+  return (<>
     <ul>
       {users.map(({ id, name }) => {
         return (
@@ -22,5 +22,7 @@ export const UsersPages = () => {
         );
       })}
     </ul>
+    <Link to='add'>Add user</Link>
+    </>
   );
 };

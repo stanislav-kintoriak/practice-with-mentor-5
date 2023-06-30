@@ -1,10 +1,16 @@
 import { fetchOne } from 'redux/users/operations';
 import { useDispatch, useSelector } from 'react-redux';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { selectCurrentUser } from '../redux/users/selectors';
+import Modal from '../components/Modal'
+import { Link } from 'react-router-dom';
 
 export const UserDetailPage = () => {
+
+const [isOpen, setIsOpen] = useState(false)
+
+
   const currentUser = useSelector(selectCurrentUser);
   const dispatch = useDispatch();
 
@@ -13,6 +19,11 @@ export const UserDetailPage = () => {
   useEffect(() => {
     dispatch(fetchOne(id));
   }, [dispatch, id]);
+
+
+function closeModal(){
+  setIsOpen(false)
+}
 
   return (
     <>
@@ -23,6 +34,9 @@ export const UserDetailPage = () => {
           <p>{currentUser.phone}</p>
           <p>{currentUser.address}</p>
           <p>{currentUser.email}</p>
+          <button type='button' onClick = {() => {setIsOpen(true)}}>Delete</button>
+          <Link to='edit'>Edit user</Link>
+          {isOpen && <Modal id={currentUser.id}  onClose ={closeModal}/>}
         </>
       )}
     </>
